@@ -1,0 +1,1847 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "websites": {
+            "value": [
+                {
+                    "name": "admin-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites1-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.5",
+                        "alwaysOn": "true",
+                        "webSocketsEnabled": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "qa-us-admin.pbr.so",
+                                "thumbprint": "A748761BB28C63C82CD5110232D2EC46CD2B1F0F",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "Admin",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "callcentre-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites1-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.5",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "qa-us-callcentre.pbr.so",
+                                "thumbprint": "A748761BB28C63C82CD5110232D2EC46CD2B1F0F",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "CallCentre",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "titan-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites1-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.5",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "Titan",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "locationgroup-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.5",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "locationgroup.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "Service-LocationGroup-Meshbock",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "mobileconfiguration-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.5",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "Service-MobileConfiguration",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "software-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites1-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "use32BitWorkerProcess": false,
+                        "netFrameworkVersion": "v4.5",
+                        "alwaysOn": "true",
+                        "webSocketsEnabled": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "software.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "500",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "Software",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "automatedtesting-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites1-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.5",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "MobileAppsManagement_EXTENSION_VERSION": "latest",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "MobileAppsManagement_EXTENSION_VERSION": "latest",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "Automated Testing Api",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "staticspa-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites1-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.5",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "MiniSpa -CDN _proxy",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "viewing-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "viewing.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-viewing-web-api",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "property-api-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "property-api.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-property-details-webapi",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "users-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "users-api.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-user-profile-webapi",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "offers-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites1-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "offers.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "Service-Offers",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "buyerqualification-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": false,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "buyerqualification.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "BuyerQualification",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": false
+                },
+                {
+                    "name": "listing-search-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "listing-search.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBJOBS_STOPPED": "false",
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBJOBS_STOPPED": "true",
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-listing-search",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "listing-dedupe-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "listing-dedupe.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-listing-dedupe",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "listing-details-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "listing-details.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "false",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "true",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-listing-details",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "listing-ingest-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "listing-ingest.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBJOBS_STOPPED": "false",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBJOBS_STOPPED": "true",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-listing-ingest",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "listing-propertyalerts-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "listing-propertyalerts.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "false",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "true",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-listing-propertyalerts",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "listing-geocodecache-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "listing-geocodecache.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "false",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "true",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-listing-geocodecache",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "agent-listings-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "agent-listings.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "false",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "true",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-agent-listings",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "lead-inbound-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites1-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "lead-inbound.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-lead-inbound",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "valuation-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "valuation.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "Service-Valuation",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "viewing-tour-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "viewing-tour.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-viewing-tour-web-api",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "viewing-openhome-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "viewing-openhome.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-viewing-openhome-web-api",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "listing-mls-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "SkipAppSettings": true,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-listing-mls",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "agent-lookup-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "agent-lookup.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "PB.ITOps.ImageProcessing.Cloudinary.WebApi",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "listing-lockboxcode-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "listing-lockboxcode.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "false",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "true",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-listing-lockboxcode",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "auth0databaseconnector-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "Service-Auth0DatabaseConnector",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "advert-complianceupload-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "advert-complianceupload.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-advert-complianceupload",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "listing-mlsdisclosures-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "listing-mlsdisclosures.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "false",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "true",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-listing-mlsdisclosures",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "availability-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "availability.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "shipLogsToStorage": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-availability-webapi",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "marketing-trustpilotreviews-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.7",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "marketing-trustpilotreviews.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "shipLogsToStorage": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBJOBS_DISABLE_SCHEDULE ": "true",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBJOBS_STOPPED": "true",
+                            "WEBJOBS_DISABLE_SCHEDULE ": "true",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-marketing-trustpilotreviews",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "marketing-localactivity-webapi-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.7",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "marketing-localactivity.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "false",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "true",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-marketing-localactivity-webapi",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "itops-pushnotifications-core-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.7",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "pushnotifications-core.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-itops-pushnotifications-core",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "itops-pushnotifications-registration-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.7",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "pushnotifications-registration.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-itops-pushnotifications-registration",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "listing-support-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "listing-support.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "false",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "true",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-listing-support",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "expertteam-webapi-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.7",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "expertteam-webapi.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "false",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "true",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-expertteam-webapi",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "listing-mls-importer-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.7",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "listing-mls-importer.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "false",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBJOBS_STOPPED": "true",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-listing-mls-importer",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "listing-mls-admin-websiteui-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.7",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "listing-mls-admin-websiteui.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "listing-mls-admin-websiteui",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "viewing-qualification-questions-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "viewing-qualification-questions.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-viewing-qualification-questions-web-api",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "valuation-appointment-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.6",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "valuation-appointment.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-valuation-appointment-webapi",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "commerce-basket-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.7",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "commerce-basket.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-commerce-basket",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "commerce-addon-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.7",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "commerce-addon.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_LOAD_CERTIFICATES": "*",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-commerce-addon",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                },
+                {
+                    "name": "listing-legacypropertyimporter-qa-ws-uks-pb",
+                    "hostingPlan": "/subscriptions/25757089-eabb-4242-a982-5d01889388d8/resourceGroups/QA/providers/Microsoft.Web/serverFarms/sites2-qa-asp-uks-pb",
+                    "location": "UK South",
+                    "clientAffinityEnabled": false,
+                    "siteProperties": {
+                        "netFrameworkVersion": "v4.7",
+                        "alwaysOn": "true",
+                        "http20Enabled": true,
+                        "minTlsVersion": "1.2",
+                        "ftpsState": "Disabled"
+                    },
+                    "postDeploy": {
+                        "customDomainBinding": [
+                            {
+                                "domain": "listing-legacypropertyimporter.qa-us.pbr.so",
+                                "thumbprint": "BCEB3682240DE56052F6A1DBF1C57E27E8414271",
+                                "skipSettingCname": false,
+                                "skipSettingSslBinding": false
+                            }
+                        ]
+                    },
+                    "SkipAppSettings": false,
+                    "lockResource": false,
+                    "appSettings": {
+                        "production": {
+                            "WEBSITE_LOCAL_CACHE_OPTION": "Always",
+                            "WEBSITE_LOCAL_CACHE_SIZEINMB": "300",
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        },
+                        "staging": {
+                            "WEBSITE_SKIP_ALL_BINDINGS_IN_APPHOST_CONFIG": "1"
+                        }
+                    },
+                    "metadata": {
+                        "skip": true,
+                        "octopusProjectName": "pb-listing-legacypropertyimporter",
+                        "logentriesTokenVariableName": "LOGENTRIES_TOKEN"
+                    },
+                    "enableHttpsOnly": true
+                }
+            ]
+        },
+        "tags": {
+            "value": {
+                "environment": "QA",
+                "tenant": "US",
+                "country": "US",
+                "octopusEnvironment": "QA"
+            }
+        }
+    }
+}
