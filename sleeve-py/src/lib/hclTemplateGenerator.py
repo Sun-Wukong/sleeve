@@ -1,16 +1,17 @@
 import json
 import jinja2
 
-''' Goals of this:
-- Create scripted process of generating ARM Resource Parameter files
-- Produce a template( Jinja2 for PoC ), for creating new parameter configurations
+''' 
+Goals of this:
+- Create scripted process of generating Hashicorp Configuration Language files
+- Produce a template( Jinja2 for PoC ), for creating new Hashicorp product configurations
 - Test for the QA cases( Functional )
  
 Not Goals of this:
 - Testing integration into CD Pipeline( Let's allow Powershell, VSTS to handle that )
 '''
 
-class armParamGenerator( dict ):
+class hclTemplateGenerator( dict ):
 """ 
 ARM Parameter file generator. Contains a list of values to be inserted into a given parameter file
 
@@ -22,9 +23,9 @@ businessRegion(string): The region we are deploying the resource to
 parameters(dict): a dictionary of parameters, where each parameter may be a `atomic` or `composite` complexity
 
 Construction flow:
-- Collect values for name
-- Inject parameters into the Jinja Template
-- Create new json file with Jinja, per required CDN Profile
+- Compose configurations for necessary Hashicorp tools
+- Validate configuration object schema against HCL spec
+- Create new json file with Jinja
 """
 
     

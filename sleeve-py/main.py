@@ -1,4 +1,4 @@
-from './src' import armParamGenerator
+from src import armParamGenerator
 
 if __name__ == '__main__':
     try:

@@ -10,9 +10,9 @@ Not Goals of this:
 - Testing integration into CD Pipeline( Let's allow Powershell, VSTS to handle that )
 '''
 
-class armParamGenerator( dict ):
+class armCompositeGenerator( dict ):
 """ 
-ARM Parameter file generator. Contains a list of values to be inserted into a given parameter file
+ARM Composite stack file generator. Contains a list of values to be inserted into a given parameter file
 
 name(string): the name of the resource, composed of resourceType, enviornmentTier, businessRegion
 resourceType(string): The type of resource, according to the Azure ARM Spec
@@ -22,9 +22,9 @@ businessRegion(string): The region we are deploying the resource to
 parameters(dict): a dictionary of parameters, where each parameter may be a `atomic` or `composite` complexity
 
 Construction flow:
-- Collect values for name
-- Inject parameters into the Jinja Template
-- Create new json file with Jinja, per required CDN Profile
+- Collect resources to include in a given deployment
+- Inject resources into the Jinja Template
+- Create new json file with Jinja, per intended composite template
 """
 
     

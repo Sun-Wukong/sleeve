@@ -3,9 +3,9 @@ import json
 
 @given( 'We have an existing file for the target environment' )
 
-@when( 'We load our parameter file, we can locate the values for the "websites.values" parameter' )
+@when( 'We load our parameter file, we extract all key-value pairs in the "parameters" field ' )
 
-@then( 'We generate new value objects, appending them to the "website.values" list key' )
+@then( 'We generate new value objects, appending them to the paramFactory.scaffolds list key' )
 
 @given( 'We finished adding new values, we may create a JSON object' )
 
