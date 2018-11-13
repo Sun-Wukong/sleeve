@@ -1,2 +1,2 @@
-class ParamFileFactory( metaclass=Singleton ):
+class ParamFileFactory( ):
     pass
