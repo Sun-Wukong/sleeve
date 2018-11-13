@@ -1,5 +1,5 @@
-Feature: Generate ARM Template Parameter file
-    In order to generate a parameter file for an ARM resource
+Feature: Generate Parameter file
+    In order to generate a parameter file for an IaC platform
     As a reader of a parameter file
     I want parameter file represented as a plain object
     according to either an imported file or constrictor function 
