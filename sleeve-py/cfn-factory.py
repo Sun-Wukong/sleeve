@@ -1,4 +1,5 @@
 import boto3
+import boto3.session
 import troposphere
 import troposphere.elasticbeanstalk as beanstalk
 import minio
@@ -21,15 +22,30 @@ import minio
 def get_beanstalk_details():
     beanstalk_session = boto3.session.Session()
     ebs = beanstalk_session.client('elasticbeanstalk')
-    return [env["EnvironmentName"] for env in ebs.describe_environments()['Environments']]
+    envs = ebs.describe_environments()
+    apps = ebs.describe_applications()
+    confs = [ebs.describe_configuration_settings(EnvironmentName=env['EnvironmentName'], ApplicationName=env['ApplicationName']) for env in envs] 
+    appvs = ebs.describe_application_versions()
+
+    return {
+        "environments": envs,
+        "applications": apps,
+        "configuration_templates": confs,
+        "app_versions": appvs
+    }
 
 
-
-def add_beanstalk_to_template(template=troposphere.Template(), beanstalk_specs=[]):
-    for spec in beanstalk_specs:
-        template.add_resource(beanstalk.Environment())
+def build_environment_template(template=troposphere.Template()):
     pass
 
 
-def rm_beanstalk_from_template(template):
+def build_config_template(template=troposphere.Template()):
+    pass
+
+
+def build_application_template(template=troposphere.Template()):
+    pass
+
+
+def build_application_version_template(template=troposphere.Template()):
     pass
