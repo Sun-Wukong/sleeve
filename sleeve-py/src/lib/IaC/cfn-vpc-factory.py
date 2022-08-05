@@ -1,4 +1,3 @@
-from pipes import Template
 import boto3
 import boto3.session
 import troposphere
@@ -13,7 +12,7 @@ def get_vpc_details():
     return vpcs
 
 
-def build_vpc_template(template=Template(), vpcs=[]):
+def build_vpc_template(template=troposphere.Template(), vpcs=[]):
     if len(vpcs) > 0:
         for vpc in vpcs:
             template.add_resource(ec2.VPC(
