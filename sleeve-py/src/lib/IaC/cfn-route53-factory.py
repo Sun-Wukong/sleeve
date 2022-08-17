@@ -5,13 +5,13 @@ import troposphere.route53 as route53
 from troposphere.template_generator import TemplateGenerator
 
 
-def get_hosted_zone_details(session = boto3.session.Session()):
+def get_hosted_zone_details(session=boto3.session.Session()):
     r53 = session.client(route53)
     hosted_zones = r53.list_hosted_zones()['HostedZones']
     return hosted_zones
 
 
-def get_recordset_groups(session = boto3.session.Session(), hosted_zones=get_hosted_zone_details()): 
+def get_recordset_groups(session=boto3.session.Session(), hosted_zones=get_hosted_zone_details()):
     r53 = session.client(route53)
     recordset_groups = [
         {
@@ -25,8 +25,12 @@ def get_recordset_groups(session = boto3.session.Session(), hosted_zones=get_hos
 
 def get_health_check_confs():
     pass
-    
-        
+
+
+def make_health_check():
+    pass
+
+
 def build_hosted_zone_templates(template=troposphere.Template(), zones=[]):
     if len(zones) > 1:
         for zone in zones:
@@ -41,7 +45,7 @@ def build_hosted_zone_templates(template=troposphere.Template(), zones=[]):
         return TemplateGenerator(template).to_yaml()
     else:
         pass
-    
+
 
 def build_record_set_group_templates(template=troposphere.Template(), rec_set_grps=[]):
     if len(rec_set_grps) > 1:
